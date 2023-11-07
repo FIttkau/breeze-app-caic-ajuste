@@ -1,30 +1,6 @@
-import React, { useState, useRef } from "react";
-import Dropdown from "@/Components/Dropdown";
-import { useForm, usePage } from "@inertiajs/react";
-import PostForm from "@/Components/PostForm";
-import { router } from "@inertiajs/react";
+import React  from "react";
 
-export default function Post({ post }) {
-    const { auth } = usePage().props;
-    const [editing, setEditing] = useState(false);
-    const { data, setData, patch, clearErrors, reset, errors } = useForm({
-        titulo: post.titulo,
-        conteudo: post.conteudo,
-        imagem_destaque: post.imagem_destaque,
-    });
-
-
-
-    const cancel = () => {
-        if (window.confirm("Tem certeza de que deseja cancelar?")) {
-            setEditing(false);
-            reset();
-            clearErrors();
-        }
-    };
-
-    const inputRef = useRef();
-
+export default function Post({ post }) {  
     return (
         <div className="p-6 flex flex-col">
             {post.imagem_destaque && (
@@ -46,6 +22,7 @@ export default function Post({ post }) {
                                 </small>
                             )}
                         </small>
+                        <p>{post.conteudo}</p>
                     </div>
                 </div>
             </div>
