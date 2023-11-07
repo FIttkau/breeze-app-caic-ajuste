@@ -82,6 +82,8 @@ class PostController extends Controller
         // Encontra o post a ser atualizado
         $post = Post::findOrFail($id);
 
+        $this->authorize('update', $post);
+
         // Valida os dados do formulário usando UpdatePostRequest
         $validatedData = $request->validated();
 
@@ -108,6 +110,8 @@ class PostController extends Controller
     public function destroy(string $id)
     {
         $post = Post::findOrFail($id);
+
+        $this->authorize('delete', $post);
 
         Storage::disk('public')->delete($post->imagem_destaque);
 

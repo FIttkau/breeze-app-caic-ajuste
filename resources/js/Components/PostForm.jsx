@@ -11,8 +11,7 @@ const PostForm = ({
     setData,
     inputRef,
     submit,
-    cancel,
-    withImageUpload,
+    cancel
 }) => {
     return (
         <form onSubmit={submit} encType="multipart/form-data">
