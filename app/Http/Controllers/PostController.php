@@ -78,7 +78,8 @@ class PostController extends Controller
      * Update the specified resource in storage.
      */
     public function update(UpdatePostRequest $request, string $id)
-    {
+    {    
+
         // Encontra o post a ser atualizado
         $post = Post::findOrFail($id);
 

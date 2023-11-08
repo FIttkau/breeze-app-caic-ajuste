@@ -23,6 +23,7 @@ export default function Post({ post }) {
                                 </small>
                             )}
                         </small>
+                        <p>{post.conteudo}</p>
                     </div>
                 </div>
             </div>

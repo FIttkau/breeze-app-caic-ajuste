@@ -11,7 +11,7 @@ const PostForm = ({
     setData,
     inputRef,
     submit,
-    cancel
+    cancel    
 }) => {
     return (
         <form onSubmit={submit} encType="multipart/form-data">
